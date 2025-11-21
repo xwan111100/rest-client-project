@@ -3,15 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REST Client CNN</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>CNN News – REST Client</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+
+        /* HEADER */
+        .topbar {
+            background: #cc0000;
+            color: white;
+            padding: 14px 20px;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* NAVIGATION */
+        .navbar {
+            background: #fff;
+            padding: 10px 20px;
+            display: flex;
+            gap: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #cc0000;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #a30000;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: url('https://akcdn.detik.net.id/visual/2023/07/04/cnn-indonesia.jpeg?w=700&q=90') center/cover no-repeat;
+            height: 350px;
+            color: white;
+            display: flex;
+            align-items: flex-end;
+            padding: 25px;
+        }
+
+        .hero-text {
+            background: rgba(0,0,0,0.6);
+            padding: 15px 20px;
+            border-radius: 6px;
+            max-width: 500px;
+        }
+
+        .hero-text h1 {
+            margin: 0;
+            font-size: 26px;
+        }
+
+        /* GRID BERITA */
+        .content {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #cc0000;
+        }
+
+        .grid-news {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card-title {
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .card a {
+            display: inline-block;
+            padding: 10px 12px;
+            margin: 0 12px 12px;
+            background: #cc0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .card a:hover {
+            background: #a30000;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background: #fff;
+            border-top: 1px solid #ddd;
+            color: #777;
+        }
+    </style>
 </head>
 <body>
-    <h1>REST Client CNN Indonesia</h1>
-    <p>Aplikasi ini menampilkan berita dari API CNN Indonesia.</p>
 
-    <a href="news-list.html">List Berita</a> |
-    <a href="search.html">Pencarian</a> |
-    <a href="about.html">Tentang Aplikasi</a>
+    <!-- HEADER -->
+    <div class="topbar">CNN INDONESIA – REST CLIENT</div>
+
+    <!-- NAVIGATION -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="search.html">Search</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <!-- HERO SECTION -->
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Berita Terbaru dari CNN Indonesia</h1>
+            <p>Data berita real-time diambil dari Public API.</p>
+        </div>
+    </div>
+
+    <!-- SECTION BERITA -->
+    <div class="content">
+        <div class="section-title">🔴 Breaking News</div>
+
+        <div class="grid-news">
+
+            <!-- Card contoh (nanti diganti API jika mau) -->
+            <div class="card">
+                <img src="https://picsum.photos/400/200?random=1">
+                <div class="card-title">Judul Berita Contoh</div>
+                <a href="#">Baca Selengkapnya</a>
+            </div>
+
+            <div class="card">
+                <img src="https://picsum.photos/400/200?random=2">
+                <div class="card-title">Judul Berita Penting</div>
+                <a href="#">Baca Selengkapnya</a>
+            </div>
+
+            <div class="card">
+                <img src="https://picsum.photos/400/200?random=3">
+                <div class="card-title">Update Berita Hari Ini</div>
+                <a href="#">Baca Selengkapnya</a>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        © 2025 – REST Client CNN Indonesia | Kelompok Anda
+    </footer>
+
 </body>
 </html>
