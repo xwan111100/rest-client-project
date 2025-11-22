@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact – CNN News</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+
+        /* HEADER */
+        .topbar {
+            background: #cc0000;
+            color: white;
+            padding: 14px 20px;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: #fff;
+            padding: 10px 20px;
+            display: flex;
+            gap: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #cc0000;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #a30000;
+        }
+
+        /* CONTACT CARD */
+        .content {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            color: #cc0000;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        button {
+            background: #cc0000;
+            color: white;
+            padding: 12px 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #a30000;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background: #fff;
+            border-top: 1px solid #ddd;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="topbar">CNN INDONESIA – REST CLIENT</div>
+
+    <!-- NAVIGATION -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="search.html">Search</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <!-- CONTACT FORM -->
+    <div class="content">
+        <h2>Hubungi Kami</h2>
+
+        <form>
+            <label>Nama Lengkap</label>
+            <input type="text" placeholder="Masukkan nama Anda">
+
+            <label>Email</label>
+            <input type="email" placeholder="nama@email.com">
+
+            <label>Pesan</label>
+            <textarea rows="5" placeholder="Tulis pesan Anda di sini..."></textarea>
+
+            <button type="submit">Kirim Pesan</button>
+        </form>
+    </div>
+
+    <footer>
+        © 2025 – REST Client CNN Indonesia | Kelompok 5 
+    </footer>
+
+</body>
+</html>
