@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,25 +23,61 @@
             letter-spacing: 1px;
         }
 
-        /* NAVIGATION */
+        /* NAVBAR */
         .navbar {
             background: #fff;
             padding: 10px 20px;
             display: flex;
-            gap: 20px;
+            justify-content: space-between;
+            align-items: center;
             border-bottom: 1px solid #ddd;
+            position: relative;
         }
 
-        .navbar a {
-            text-decoration: none;
+        .hamburger {
+            font-size: 26px;
+            cursor: pointer;
             color: #cc0000;
-            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
             transition: 0.3s;
         }
 
-        .navbar a:hover {
-            color: #a30000;
+        .hamburger:hover {
+            background: #f3f3f3;
         }
+
+        /* MENU DROPDOWN */
+        .menu {
+            display: none;
+            position: absolute;
+            top: 55px;
+            right: 20px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .menu a {
+            display: block;
+            padding: 12px 16px;
+            color: #cc0000;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 1px solid #f1f1f1;
+        }
+
+        .menu a:last-child {
+            border-bottom: none;
+        }
+
+        .menu a:hover {
+            background: #f8f8f8;
+        }
+
 
         /* HERO SECTION */
         .hero {
@@ -48,12 +85,18 @@
             height: 350px;
             color: white;
             display: flex;
-            align-items: flex-end;
-            padding: 25px;
+            justify-content: center;
+            /* rata tengah horizontal */
+            align-items: flex-start;
+            /* pindah ke atas */
+            padding-top: 40px;
+            /* beri jarak dari atas */
+            padding-left: 25px;
+            padding-right: 25px;
         }
 
         .hero-text {
-            background: rgba(0,0,0,0.6);
+            background: rgba(0, 0, 0, 0.6);
             padding: 15px 20px;
             border-radius: 6px;
             max-width: 500px;
@@ -88,7 +131,7 @@
             background: white;
             border-radius: 6px;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         }
 
         .card img {
@@ -130,6 +173,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- HEADER -->
@@ -137,10 +181,22 @@
 
     <!-- NAVIGATION -->
     <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="contact.html">Contact</a>
-        <a href="search.html">Search</a>
-        <a href="about.html">About</a>
+
+        <!-- Logo / Title -->
+        <div class="nav-left">
+            <strong style="color:#cc0000; font-size:20px;"></strong>
+        </div>
+
+        <!-- Hamburger Button -->
+        <div class="hamburger" onclick="toggleMenu()">
+            ☰
+        </div>
+
+        <div class="menu" id="menu">
+            <a href="contact.html">Contact</a>
+            <a href="search.html">Search</a>
+            <a href="about.html">About</a>
+        </div>
     </div>
 
     <!-- HERO SECTION -->
@@ -159,6 +215,24 @@
 
             <!-- Card contoh (nanti diganti API jika mau) -->
             <div class="card">
+                <img src="https://picsum.photos/400/200?random=10">
+                <div class="card-title">Headline Utama Hari Ini</div>
+                <a href="#">Baca Selengkapnya</a>
+            </div>
+
+            <div class="card">
+                <img src="https://picsum.photos/400/200?random=11">
+                <div class="card-title">Berita Trending Terkini</div>
+                <a href="#">Baca Selengkapnya</a>
+            </div>
+
+            <div class="card">
+                <img src="https://picsum.photos/400/200?random=12">
+                <div class="card-title">Topik Panas Minggu Ini</div>
+                <a href="#">Baca Selengkapnya</a>
+            </div>
+
+            <div class="card">
                 <img src="https://picsum.photos/400/200?random=1">
                 <div class="card-title">Judul Berita Contoh</div>
                 <a href="#">Baca Selengkapnya</a>
@@ -176,12 +250,33 @@
                 <a href="#">Baca Selengkapnya</a>
             </div>
 
+            <div class="card">
+                <img src="https://picsum.photos/400/200?random=20">
+                <div class="card-title">Update Berita Hari Ini</div>
+                <a href="#">Baca Selengkapnya</a>
+            </div>
+
+            <div class="card">
+                <img src="https://picsum.photos/400/200?random=15">
+                <div class="card-title">Update Berita Hari Ini</div>
+                <a href="#">Baca Selengkapnya</a>
+            </div>
+
         </div>
     </div>
 
     <footer>
-        © 2025 – REST Client CNN Indonesia | Kelompok Anda
+        © 2025 – REST Client CNN Indonesia | Kelompok 5
     </footer>
+    
+    <!-- Java Scripts-->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+    </script>
 
 </body>
+
 </html>
