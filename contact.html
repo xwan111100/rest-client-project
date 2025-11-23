@@ -94,6 +94,23 @@
             border-top: 1px solid #ddd;
             color: #777;
         }
+
+        /* WHATSAPP FLOATING BUTTON */
+        .wa-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            z-index: 100;
+            cursor: pointer;
+        }
+
+        .wa-float img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
     </style>
 </head>
 <body>
@@ -128,8 +145,13 @@
     </div>
 
     <footer>
-        © 2025 – REST Client CNN Indonesia | Kelompok 5 
+        © 2025 – REST Client CNN Indonesia | Kelompok 5
     </footer>
+
+    <!-- WHATSAPP OFFICIAL LOGO (PNG) -->
+    <a href="https://wa.me/6281913086621" target="_blank" class="wa-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat WhatsApp">
+    </a>
 
 </body>
 </html>
