@@ -7,6 +7,8 @@ async function loadNews() {
         const response = await fetch(URL);
         const data = await response.json();
 
+        const first = data.articles[0];
+
         const newsContainer = document.getElementById("news-list");
         newsContainer.innerHTML = ""; // kosongkan card contoh
 
@@ -23,8 +25,10 @@ async function loadNews() {
     } catch (error) {
         console.error("Gagal memuat berita:", error);
         document.getElementById("news-list").innerHTML =
-            "<p>Gagal memuat berita dari API.</p>";
+            document.getElementById("hero-title").innerText = first.title;
+        document.getElementById("hero-desc").innerText = first.description || "Berita terbaru dari GNews API";
+        "<p>Gagal memuat berita dari API.</p>";
     }
 }
-
+loadHeroNews();
 loadNews();
