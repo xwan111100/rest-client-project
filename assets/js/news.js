@@ -1,16 +1,17 @@
 const API_KEY = "d1c4b3508270d50b04f4bf0e48930e60";
 
-const URL = `https://gnews.io/api/v4/top-headlines?lang=id&country=id&max=10&apikey=${API_KEY}`;
+const API_URL = `https://api.allorigins.win/raw?url=` +
+    encodeURIComponent(
+        `https://gnews.io/api/v4/search?q=indonesia&lang=id&max=10&apikey=${API_KEY}`
+    );
 
 async function loadNews() {
     try {
-        const response = await fetch(URL);
+        const response = await fetch(API_URL);
         const data = await response.json();
 
-        const first = data.articles[0];
-
         const newsContainer = document.getElementById("news-list");
-        newsContainer.innerHTML = ""; // kosongkan card contoh
+        newsContainer.innerHTML = "";
 
         data.articles.forEach(article => {
             newsContainer.innerHTML += `
@@ -22,13 +23,16 @@ async function loadNews() {
             `;
         });
 
+        // Hero section
+        const first = data.articles[0];
+        document.getElementById("hero-title").innerText = first.title;
+        document.getElementById("hero-desc").innerText = first.description;
+
     } catch (error) {
         console.error("Gagal memuat berita:", error);
         document.getElementById("news-list").innerHTML =
-            document.getElementById("hero-title").innerText = first.title;
-        document.getElementById("hero-desc").innerText = first.description || "Berita terbaru dari GNews API";
-        "<p>Gagal memuat berita dari API.</p>";
+            "<p style='color:red;'>Gagal memuat berita dari API.</p>";
     }
 }
-loadHeroNews();
+
 loadNews();
