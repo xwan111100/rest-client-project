@@ -1,9 +1,6 @@
 const API_KEY = "d1c4b3508270d50b04f4bf0e48930e60";
 
-const API_URL = `https://api.allorigins.win/raw?url=` +
-    encodeURIComponent(
-        `https://gnews.io/api/v4/search?q=indonesia&lang=id&max=10&apikey=${API_KEY}`
-    );
+const API_URL = "http://localhost/rest-client-project/api.php";
 
 async function loadNews() {
     try {
@@ -23,15 +20,12 @@ async function loadNews() {
             `;
         });
 
-        // Hero section
         const first = data.articles[0];
         document.getElementById("hero-title").innerText = first.title;
         document.getElementById("hero-desc").innerText = first.description;
 
     } catch (error) {
-        console.error("Gagal memuat berita:", error);
-        document.getElementById("news-list").innerHTML =
-            "<p style='color:red;'>Gagal memuat berita dari API.</p>";
+        console.error("ERROR:", error);
     }
 }
 
