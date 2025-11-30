@@ -1,0 +1,63 @@
+<<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pencarian Berita – REST Client</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="topbar">CNN INDONESIA – REST CLIENT</div>
+
+    <!-- NAVIGATION -->
+    <div class="navbar">
+
+        <div class="logo-container">
+            <img src="assets/img/unp.png" class="logo">
+        </div>
+
+        <!-- Hamburger Button -->
+        <div class="hamburger" onclick="toggleMenu()">
+            ☰
+        </div>
+
+        <div class="menu" id="menu">
+            <a href="contact.html">Contact</a>
+            <a href="search.html" class="active">Search</a>
+            <a href="about.html">About</a>
+        </div>
+    </div>
+
+    <!-- SEARCH SECTION -->
+    <div class="content">
+        <div class="section-title">🔎 Pencarian Berita</div>
+
+        <div class="search-box">
+            <input type="text" id="keyword" placeholder="Cari berita terbaru..." class="search-input">
+            <button onclick="searchNews()" class="search-btn">Cari</button>
+        </div>
+
+        <div id="search-results" class="grid-news"></div>
+    </div>
+
+    <footer>
+        © 2025 – REST Client CNN Indonesia | Kelompok 5
+    </footer>
+
+    <!-- Navbar Script -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+    </script>
+
+    <!-- Search Script -->
+    <script src="assets/js/search.js"></script>
+
+</body>
+</html>
